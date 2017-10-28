@@ -8,10 +8,10 @@ import com.les.lifeform.plant.Plant;
 public class Main {
 
 	public static void main(String[] args) {
-		Cat pipka = new DomesticCat("Pipka", "tricolor", 'F', 3, "house cat");
+		Animal pipka = new DomesticCat("Pipka", "tricolor", 'F', 3, "house cat");
 		process(pipka);
 		System.out.println();
-		Dog charka = new ZwergSchnautzer("Charka", "black", 'M', 7);
+		Animal charka = new ZwergSchnautzer("Charka", "black", 'M', 7);
 		process(charka);
 		charka.play(pipka);
 		System.out.println();
