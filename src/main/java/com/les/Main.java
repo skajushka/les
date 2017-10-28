@@ -8,7 +8,7 @@ import com.les.lifeform.plant.Plant;
 public class Main {
 
 	public static void main(String[] args) {
-		Animal pipka = new DomesticCat("Pipka", "tricolor", 'F', 3, "house cat");
+		Animal pipka = new DomesticCat("Pipka", "tricolor", 'F', 3);
 		process(pipka);
 		System.out.println();
 		Animal charka = new ZwergSchnautzer("Charka", "black", 'M', 7);

@@ -6,7 +6,7 @@ abstract public class PlantImpl extends LifeFormImpl implements Plant {
 	
 	protected double height;
 	
-	protected PlantImpl(String color, int age, double height, String species) {
+	public PlantImpl(String color, int age, double height, String species) {
 		this.color = color;
 		this.age = age;
 		this.height = height;

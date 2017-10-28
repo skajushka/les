@@ -3,6 +3,9 @@ package com.les.lifeform.animal;
 import com.les.lifeform.LifeFormImpl;
 
 abstract public class AnimalImpl extends LifeFormImpl implements Animal {
+
+    private static char FEMALE = 'F';
+    private static char MALE = 'M';
 		
 	protected String name;
 	protected char sex;
@@ -80,12 +83,12 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 	
 	abstract public void voice(); 
 	
-	protected AnimalImpl(String name, String color, char sex, int age, int hunger, int maxHunger, String species) {
+	public AnimalImpl(String name, String color, char sex, int age, int maxHunger, String species) {
 		this.name = name;
 		this.color = color;
 		this.age = age;
 		this.sex = sex;
-		this.hunger = hunger;
+		this.hunger = maxHunger / 2;
 		this.maxHunger = maxHunger;
 		this.species = species;
 	}
@@ -97,10 +100,12 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 		result = result + "My color is " + this.color + "\n";
 		result = result + "I am " + this.age + " years old" + "\n";
 		
-		if (this.sex == 'F') {
+		if (this.sex == FEMALE) {
 			result = result + "I'm a girl";			
-		} else {
+		} else if (this.sex == MALE) {
 			result = result + "I'm a boy";
+		} else {
+			throw new IllegalArgumentException("Incorrect sex!");
 		}
 		
 		return result;

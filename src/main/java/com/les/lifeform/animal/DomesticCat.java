@@ -2,8 +2,11 @@ package com.les.lifeform.animal;
 
 public class DomesticCat extends AnimalImpl {
 
-	public DomesticCat(String name, String color, char sex, int age, String species) {
-		super(name, color, sex, age, 2, 3, species);
+	private static int MAX_HUNGER = 3;
+	private static String SPECIES = "Fellis catus";
+
+	public DomesticCat(String name, String color, char sex, int age) {
+		super(name, color, sex, age, MAX_HUNGER, SPECIES);
 	}
 	
 	@Override

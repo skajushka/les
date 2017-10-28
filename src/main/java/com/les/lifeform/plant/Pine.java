@@ -1,8 +1,11 @@
 package com.les.lifeform.plant;
 
 public class Pine extends PlantImpl {
-	
+
+	private static String COLOR = "green";
+	private static String SPECIES = "Pinus silvestris";
+
 	public Pine (int age, double height) {
-		super ("green", age, height, "Pinus silvestris");
+		super (COLOR, age, height, SPECIES);
 	}
 }

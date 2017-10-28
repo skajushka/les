@@ -1,8 +1,11 @@
 package com.les.lifeform.plant;
 
 public class Heather extends PlantImpl {
+
+    private static String COLOR = "dark green";
+	private static String SPECIES = "Erica vulgaris";
 	
 	public Heather (int age, double height) {
-		super ("dark green", age, height, "Erica vulgaris");
+		super (COLOR, age, height, SPECIES);
 	}
 }
