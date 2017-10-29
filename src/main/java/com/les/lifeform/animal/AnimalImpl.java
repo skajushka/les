@@ -11,7 +11,21 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 	protected char sex;
 	protected int hunger;
 	protected int maxHunger;
-	
+
+	public AnimalImpl(String name, String color, char sex, int age, int maxHunger, String species) {
+		if (sex != FEMALE && sex != MALE) {
+			throw new IllegalArgumentException("Incorrect sex!");
+		}
+
+		this.name = name;
+		this.color = color;
+		this.age = age;
+		this.sex = sex;
+		this.hunger = maxHunger / 2;
+		this.maxHunger = maxHunger;
+		this.species = species;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -25,7 +39,11 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 	}
 
 	public void setSex(char sex) {
-		this.sex = sex;
+		if (sex != FEMALE && sex != MALE) {
+			throw new IllegalArgumentException("Incorrect sex!");
+		} else {
+			this.sex = sex;
+		}
 	}
 
 	public int getHunger() {
@@ -81,17 +99,7 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 		animal.incrementHunger();
 	}
 	
-	abstract public void voice(); 
-	
-	public AnimalImpl(String name, String color, char sex, int age, int maxHunger, String species) {
-		this.name = name;
-		this.color = color;
-		this.age = age;
-		this.sex = sex;
-		this.hunger = maxHunger / 2;
-		this.maxHunger = maxHunger;
-		this.species = species;
-	}
+	abstract public void voice();
 	
 	public String toString() {
 		String result = "";
