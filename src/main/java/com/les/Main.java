@@ -20,6 +20,10 @@ public class Main {
 		System.out.println();
 		Plant heather = new Heather(1,10);
 		process(heather);
+        System.out.println();
+		Racoon inocek = new Racoon("Inocek", "grey", 'F', 3);
+		inocek.introduce();
+		inocek.pickFlowers();
 	}
 			
 	public static void process(Animal animal) {
