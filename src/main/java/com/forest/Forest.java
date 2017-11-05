@@ -1,4 +1,6 @@
-package com.forest.lifeform;
+package com.forest;
+
+import com.forest.lifeform.LifeForm;
 
 import java.util.List;
 
