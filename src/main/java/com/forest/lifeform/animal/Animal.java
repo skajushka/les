@@ -1,6 +1,6 @@
-package com.les.lifeform.animal;
+package com.forest.lifeform.animal;
 
-import com.les.lifeform.LifeForm;
+import com.forest.lifeform.LifeForm;
 
 public interface Animal extends LifeForm {
 

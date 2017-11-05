@@ -1,9 +1,9 @@
-package com.les;
+package com.forest;
 
-import com.les.lifeform.animal.*;
-import com.les.lifeform.plant.Heather;
-import com.les.lifeform.plant.Pine;
-import com.les.lifeform.plant.Plant;
+import com.forest.lifeform.animal.*;
+import com.forest.lifeform.plant.Heather;
+import com.forest.lifeform.plant.Pine;
+import com.forest.lifeform.plant.Plant;
 
 public class Main {
 

@@ -1,8 +1,8 @@
-package com.les.lifeform.animal;
+package com.forest.lifeform.animal;
 
-import com.les.lifeform.plant.Bellflower;
-import com.les.lifeform.plant.Daisy;
-import com.les.lifeform.plant.Flower;
+import com.forest.lifeform.plant.Bellflower;
+import com.forest.lifeform.plant.Daisy;
+import com.forest.lifeform.plant.Flower;
 
 import java.util.ArrayList;
 import java.util.Collection;

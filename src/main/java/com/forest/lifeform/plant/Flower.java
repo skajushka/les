@@ -1,4 +1,4 @@
-package com.les.lifeform.plant;
+package com.forest.lifeform.plant;
 
 public interface Flower extends Plant {
 }

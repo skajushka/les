@@ -1,6 +1,6 @@
-package com.les.lifeform.plant;
+package com.forest.lifeform.plant;
 
-import com.les.lifeform.LifeFormImpl;
+import com.forest.lifeform.LifeFormImpl;
 
 abstract public class PlantImpl extends LifeFormImpl implements Plant {
 	

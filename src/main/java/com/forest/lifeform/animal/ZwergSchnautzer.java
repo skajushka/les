@@ -1,4 +1,4 @@
-package com.les.lifeform.animal;
+package com.forest.lifeform.animal;
 
 public class ZwergSchnautzer extends AnimalImpl {
 

@@ -1,4 +1,4 @@
-package com.les.lifeform;
+package com.forest.lifeform;
 
 
 abstract public class LifeFormImpl implements LifeForm {

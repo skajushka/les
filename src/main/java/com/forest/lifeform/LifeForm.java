@@ -1,4 +1,4 @@
-package com.les.lifeform;
+package com.forest.lifeform;
 
 public interface LifeForm {
 
