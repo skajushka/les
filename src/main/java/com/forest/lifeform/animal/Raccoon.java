@@ -7,14 +7,14 @@ import com.forest.lifeform.plant.Flower;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Racoon extends AnimalImpl {
+public class Raccoon extends AnimalImpl {
 
     private static int MAX_HUNGER = 4;
     private static String SPECIES = "Procyon lotor";
 
     Collection<Flower> flowers;
 
-    public Racoon(String name, String color, char sex, int age) {
+    public Raccoon(String name, String color, char sex, int age) {
         super(name, color, sex, age, MAX_HUNGER, SPECIES);
     }
 
@@ -45,6 +45,6 @@ public class Racoon extends AnimalImpl {
         }
 
         setFlowers(bouquette);
-        System.out.println("Racoon says: I went to forest and picked " + bouquette.size() + " flowers!");
+        System.out.println("Raccoon says: I went to forest and picked " + bouquette.size() + " flowers!");
     }
 }

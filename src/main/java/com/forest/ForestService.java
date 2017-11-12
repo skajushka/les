@@ -1,18 +1,22 @@
 package com.forest;
 
 import com.forest.lifeform.LifeForm;
-import com.forest.lifeform.animal.Animal;
-import com.forest.lifeform.animal.DomesticCat;
-import com.forest.lifeform.animal.Racoon;
-import com.forest.lifeform.animal.ZwergSchnautzer;
-import com.forest.lifeform.plant.Heather;
-import com.forest.lifeform.plant.Pine;
+import com.forest.lifeform.animal.*;
 import com.forest.lifeform.plant.Plant;
+import com.forest.lifeform.plant.PlantService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ForestService {
+
+    private PlantService plantService;
+    private AnimalService animalService;
+
+    public ForestService() {
+        this.plantService = new PlantService();
+        this.animalService = new AnimalService();
+    }
 
     public Forest createForest() {
         Forest forest = new Forest();
@@ -21,16 +25,12 @@ public class ForestService {
     }
 
     private List<LifeForm> getInhabitants() {
-        Animal pipka = new DomesticCat("Pipka", "tricolor", 'F', 3);
-        Animal charka = new ZwergSchnautzer("Charka", "black", 'M', 7);
-        Plant pine = new Pine(2, 20);
-        Plant heather = new Heather(1,10);
-        Racoon inocek = new Racoon("Inocek", "grey", 'F', 3);
+        Plant pine = plantService.createPine();
+        Plant heather = plantService.createHeather();
+        Raccoon inocek = animalService.createRaccoon();
 
         List<LifeForm> inhabitants = new ArrayList<LifeForm>();
-        inhabitants.add(pipka);
         inhabitants.add(pine);
-        inhabitants.add(charka);
         inhabitants.add(heather);
         inhabitants.add(inocek);
         return inhabitants;
