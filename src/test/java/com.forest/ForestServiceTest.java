@@ -6,10 +6,14 @@ import static org.junit.Assert.*;
 
 public class ForestServiceTest {
 
+    public static int EXPECTED_BIOTOPE_SIZE = 3;
+    public static int EXPECTED_FLORA_SIZE = 2;
+    public static int EXPECTED_FAUNA_SIZE = 1;
+    
     private ForestService forestService;
 
     @Before
-    public void setUpBeforeTest() {
+    public void setUp() {
         this.forestService = new ForestService();
     }
 
@@ -20,8 +24,8 @@ public class ForestServiceTest {
         int floraSize = forest.getFlora().size();
         int faunaSize = forest.getFauna().size();
         assertNotNull(forest);
-        assertEquals(3, biotopeSize);
-        assertEquals(2, floraSize);
-        assertEquals(1, faunaSize);
+        assertEquals(EXPECTED_BIOTOPE_SIZE, biotopeSize);
+        assertEquals(EXPECTED_FLORA_SIZE, floraSize);
+        assertEquals(EXPECTED_FAUNA_SIZE, faunaSize);
     }
 }
