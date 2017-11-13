@@ -9,7 +9,7 @@ public class ForestServiceTest {
     public static int EXPECTED_BIOTOPE_SIZE = 3;
     public static int EXPECTED_FLORA_SIZE = 2;
     public static int EXPECTED_FAUNA_SIZE = 1;
-    
+
     private ForestService forestService;
 
     @Before
