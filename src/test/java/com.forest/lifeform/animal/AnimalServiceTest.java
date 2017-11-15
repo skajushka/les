@@ -6,6 +6,21 @@ import static org.junit.Assert.*;
 
 public class AnimalServiceTest {
 
+    private static String DEFAULT_RACCOON_NAME = "Kroshka";
+    private static String DEFAULT_RACCOON_COLOR = "grey";
+    private static char DEFAULT_RACCOON_SEX = 'F';
+    private static int DEFAULT_RACCOON_AGE = 5;
+
+    private static String DEFAULT_CAT_NAME = "Pipka";
+    private static String DEFAULT_CAT_COLOR = "tricolor";
+    private static char DEFAULT_CAT_SEX = 'F';
+    private static int DEFAULT_CAT_AGE = 3;
+
+    private static String DEFAULT_DOG_NAME = "Charka";
+    private static String DEFAULT_DOG_COLOR = "black";
+    private static char DEFAULT_DOG_SEX = 'M';
+    private static int DEFAULT_DOG_AGE = 5;
+
     private AnimalService animalService;
 
     @Before
@@ -16,44 +31,30 @@ public class AnimalServiceTest {
     @Test
     public void createRaccoon() {
         Raccoon raccoon = animalService.createRaccoon();
-        String name = raccoon.getName();
-        String color = raccoon.getColor();
-        char sex = raccoon.getSex();
-        int age = raccoon.getAge();
         assertNotNull(raccoon);
-        assertEquals("Kroshka", name);
-        assertEquals("grey", color);
-        assertEquals('F', sex);
-        assertEquals(5, age);
+        assertEquals(DEFAULT_RACCOON_NAME, raccoon.getName());
+        assertEquals(DEFAULT_RACCOON_COLOR, raccoon.getColor());
+        assertEquals(DEFAULT_RACCOON_SEX, raccoon.getSex());
+        assertEquals(DEFAULT_RACCOON_AGE, raccoon.getAge());
     }
 
     @Test
     public void createDomesticCat() {
         DomesticCat domesticCat = animalService.createDomesticCat();
-        String name = domesticCat.getName();
-        String color = domesticCat.getColor();
-        char sex = domesticCat.getSex();
-        int age = domesticCat.getAge();
         assertNotNull(domesticCat);
-        assertEquals("Pipka", name);
-        assertEquals("tricolor", color);
-        assertEquals('F', sex);
-        assertEquals(3, age);
+        assertEquals(DEFAULT_CAT_NAME, domesticCat.getName());
+        assertEquals(DEFAULT_CAT_COLOR, domesticCat.getColor());
+        assertEquals(DEFAULT_CAT_SEX, domesticCat.getSex());
+        assertEquals(DEFAULT_CAT_AGE, domesticCat.getAge());
     }
 
     @Test
     public void createZwergSchnautzer() {
         ZwergSchnautzer zwergSchnautzer = animalService.createZwergSchnautzer();
-        String name = zwergSchnautzer.getName();
-        String color = zwergSchnautzer.getColor();
-        char sex = zwergSchnautzer.getSex();
-        int age = zwergSchnautzer.getAge();
         assertNotNull(zwergSchnautzer);
-        assertEquals("Charka", name);
-        assertEquals("black", color);
-        assertEquals('M', sex);
-        assertEquals(5, age);
+        assertEquals(DEFAULT_DOG_NAME, zwergSchnautzer.getName());
+        assertEquals(DEFAULT_DOG_COLOR, zwergSchnautzer.getColor());
+        assertEquals(DEFAULT_DOG_SEX, zwergSchnautzer.getSex());
+        assertEquals(DEFAULT_DOG_AGE, zwergSchnautzer.getAge());
     }
-
-
 }
