@@ -39,6 +39,16 @@ public class AnimalServiceTest {
     }
 
     @Test
+    public void createRaccoonNotPredefined() {
+        Raccoon raccoon = animalService.createRaccoon(DEFAULT_RACCOON_NAME, DEFAULT_RACCOON_COLOR, DEFAULT_RACCOON_SEX, DEFAULT_RACCOON_AGE);
+        assertNotNull(raccoon);
+        assertEquals(DEFAULT_RACCOON_NAME, raccoon.getName());
+        assertEquals(DEFAULT_RACCOON_COLOR, raccoon.getColor());
+        assertEquals(DEFAULT_RACCOON_SEX, raccoon.getSex());
+        assertEquals(DEFAULT_RACCOON_AGE, raccoon.getAge());
+    }
+
+    @Test
     public void createDomesticCat() {
         DomesticCat domesticCat = animalService.createDomesticCat();
         assertNotNull(domesticCat);
@@ -49,8 +59,28 @@ public class AnimalServiceTest {
     }
 
     @Test
+    public void createDomesticCatNotPredefined() {
+        DomesticCat domesticCat = animalService.createDomesticCat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
+        assertNotNull(domesticCat);
+        assertEquals(DEFAULT_CAT_NAME, domesticCat.getName());
+        assertEquals(DEFAULT_CAT_COLOR, domesticCat.getColor());
+        assertEquals(DEFAULT_CAT_SEX, domesticCat.getSex());
+        assertEquals(DEFAULT_CAT_AGE, domesticCat.getAge());
+    }
+
+    @Test
     public void createZwergSchnautzer() {
         ZwergSchnautzer zwergSchnautzer = animalService.createZwergSchnautzer();
+        assertNotNull(zwergSchnautzer);
+        assertEquals(DEFAULT_DOG_NAME, zwergSchnautzer.getName());
+        assertEquals(DEFAULT_DOG_COLOR, zwergSchnautzer.getColor());
+        assertEquals(DEFAULT_DOG_SEX, zwergSchnautzer.getSex());
+        assertEquals(DEFAULT_DOG_AGE, zwergSchnautzer.getAge());
+    }
+
+    @Test
+    public void createZwergSchnautzerNotPredefined() {
+        ZwergSchnautzer zwergSchnautzer = animalService.createZwergSchnautzer(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE);
         assertNotNull(zwergSchnautzer);
         assertEquals(DEFAULT_DOG_NAME, zwergSchnautzer.getName());
         assertEquals(DEFAULT_DOG_COLOR, zwergSchnautzer.getColor());
