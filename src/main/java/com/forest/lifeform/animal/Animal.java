@@ -8,6 +8,7 @@ public interface Animal extends LifeForm {
 	public void setName(String name);
 	public char getSex();
 	public void setSex(char sex);
+	public int getMaxHunger();
 	public int getHunger();
 	public void setHunger(int hunger);
 	public void checkHunger();

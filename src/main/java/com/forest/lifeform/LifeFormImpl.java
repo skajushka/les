@@ -22,11 +22,7 @@ abstract public class LifeFormImpl implements LifeForm {
 	public String getColor() {
 		return this.color;
 	}
-	
-	public void setSpecies(String species) {
-		this.species = species;
-	}
-	
+
 	public String getSpecies() {
 		return this.species;
 	}

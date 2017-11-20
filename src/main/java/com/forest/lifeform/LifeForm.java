@@ -6,6 +6,5 @@ public interface LifeForm {
 	public int getAge();
 	public void setColor(String color);
 	public String getColor();
-	public void setSpecies(String species);
 	public String getSpecies();
 }

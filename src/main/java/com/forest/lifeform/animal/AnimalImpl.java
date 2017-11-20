@@ -46,6 +46,10 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 		}
 	}
 
+	public int getMaxHunger(){
+		return maxHunger;
+	}
+
 	public int getHunger() {
 		return this.hunger;
 	}
