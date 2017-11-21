@@ -27,16 +27,25 @@ public class DomesticCatTest {
     public static String HUNGRY_MESSAGE = "No-No-No! I'm empty!";
     public static String HUNGER_REPORT = "my hunger level is";
     public static String POOPOO_REPORT = "Shitting";
+    public static String FEED_REPORT = "Feeding";
+    public static String DOG_NAME = "Pups";
+    public static String DOG_COLOR = "gray";
+    public static char DOG_SEX = 'M';
+    public static int DOG_AGE = 7;
+    public static String PLAY_REPORT = "plays with ";
+
 
 
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
 
     private DomesticCat domesticCat;
+    private ZwergSchnautzer zwergSchnautzer;
 
     @Before
     public void setUp() {
         this.domesticCat = new DomesticCat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
+        this.zwergSchnautzer = new ZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
     }
 
     @Test
@@ -90,6 +99,21 @@ public class DomesticCatTest {
         Assert.assertEquals(hungerBeforePoo - 1, hungerAfterPoo);
     }
 
+    @Test
+    public void testFeed(){
+        domesticCat.setHunger(3);
+        domesticCat.feed(2);
+        Assert.assertTrue(log.getLog().contains(FEED_REPORT));
+        Assert.assertEquals(1, domesticCat.getHunger());
+    }
 
-
+    @Test
+    public void testPlay() {
+        domesticCat.setHunger(1);
+        zwergSchnautzer.setHunger(1);
+        domesticCat.play(zwergSchnautzer);
+        Assert.assertTrue(log.getLog().contains(PLAY_REPORT));
+        Assert.assertEquals(2, domesticCat.getHunger());
+        Assert.assertEquals(2, zwergSchnautzer.getHunger());
+    }
 }
