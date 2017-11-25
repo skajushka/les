@@ -116,10 +116,8 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 			result = result + "I'm a girl";			
 		} else if (this.sex == MALE) {
 			result = result + "I'm a boy";
-		} else {
-			throw new IllegalArgumentException("Incorrect sex!");
 		}
-		
+
 		return result;
 	}
 	

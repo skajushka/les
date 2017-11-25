@@ -4,10 +4,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
-import org.junit.Assert;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class DomesticCatTest {
 
@@ -33,19 +31,22 @@ public class DomesticCatTest {
     public static char DOG_SEX = 'M';
     public static int DOG_AGE = 7;
     public static String PLAY_REPORT = "plays with ";
-
-
+    public static int FEED_PORTIONS = 2;
+    public static int HUNGER_AFTER_FEED = 1;
+    public static int HUNGER_AFTER_PLAY = 2;
+    public static String TOSTRING_ONE_PART = "I'm ";
+    public static String TOSTRING_SECOND_PART = "My color is ";
+    public static String TOSTRING_THIRD_PART = " years old";
+    public static String INTRODUCE_TEXT = "I'm Blacky-The-DomesticCat";
 
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
 
     private DomesticCat domesticCat;
-    private ZwergSchnautzer zwergSchnautzer;
 
     @Before
     public void setUp() {
         this.domesticCat = new DomesticCat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
-        this.zwergSchnautzer = new ZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class DomesticCatTest {
         assertEquals(DEFAULT_CAT_COLOR, domesticCat.getColor());
         assertEquals(DEFAULT_CAT_SEX, domesticCat.getSex());
         assertEquals(DEFAULT_CAT_AGE, domesticCat.getAge());
-        Assert.assertEquals(DEFAULT_CAT_MAX_HUNGER/2, domesticCat.getHunger());
+        assertEquals(DEFAULT_CAT_MAX_HUNGER/2, domesticCat.getHunger());
     }
 
     @Test
@@ -75,11 +76,19 @@ public class DomesticCatTest {
     }
 
     @Test
-    public void testSetHunger(){
+    public void testSetZeroHunger(){
         domesticCat.setHunger(ZERO_HUNGER);
         assertTrue(log.getLog().contains(SLEEP_MESSAGE));
+    }
+
+    @Test
+    public void testNegativeHunger(){
         domesticCat.setHunger(NEGATIVE_HUNGER);
         assertTrue(log.getLog().contains(FED_MESSAGE));
+    }
+
+    @Test
+    public void testPositiveHunger(){
         domesticCat.setHunger(POSITIVE_HUNGER);
         assertTrue(log.getLog().contains(HUNGRY_MESSAGE));
     }
@@ -87,33 +96,45 @@ public class DomesticCatTest {
     @Test
     public void testCheckHunger() {
         domesticCat.checkHunger();
-        Assert.assertTrue(log.getLog().contains(HUNGER_REPORT));
+        assertTrue(log.getLog().contains(HUNGER_REPORT));
     }
 
     @Test
     public void testPooPoo(){
         int hungerBeforePoo = domesticCat.getHunger();
         domesticCat.pooPoo();
-        Assert.assertTrue(log.getLog().contains(POOPOO_REPORT));
+        assertTrue(log.getLog().contains(POOPOO_REPORT));
         int hungerAfterPoo = domesticCat.getHunger();
-        Assert.assertEquals(hungerBeforePoo - 1, hungerAfterPoo);
+        assertEquals(++hungerBeforePoo, hungerAfterPoo);
     }
 
     @Test
     public void testFeed(){
-        domesticCat.setHunger(3);
-        domesticCat.feed(2);
-        Assert.assertTrue(log.getLog().contains(FEED_REPORT));
-        Assert.assertEquals(1, domesticCat.getHunger());
+        domesticCat.setHunger(DEFAULT_CAT_MAX_HUNGER);
+        domesticCat.feed(FEED_PORTIONS);
+        assertTrue(log.getLog().contains(FEED_REPORT));
+        assertEquals(HUNGER_AFTER_FEED, domesticCat.getHunger());
     }
 
     @Test
     public void testPlay() {
-        domesticCat.setHunger(1);
-        zwergSchnautzer.setHunger(1);
+        ZwergSchnautzer zwergSchnautzer = new ZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
+        domesticCat.setHunger(HUNGER_AFTER_FEED);
         domesticCat.play(zwergSchnautzer);
-        Assert.assertTrue(log.getLog().contains(PLAY_REPORT));
-        Assert.assertEquals(2, domesticCat.getHunger());
-        Assert.assertEquals(2, zwergSchnautzer.getHunger());
+        assertTrue(log.getLog().contains(PLAY_REPORT));
+        assertEquals(HUNGER_AFTER_PLAY, domesticCat.getHunger());
+    }
+
+    @Test
+    public void testToString(){
+        assertTrue(domesticCat.toString().contains(TOSTRING_ONE_PART));
+        assertTrue(domesticCat.toString().contains(TOSTRING_SECOND_PART));
+        assertTrue(domesticCat.toString().contains(TOSTRING_THIRD_PART));
+    }
+
+    @Test
+    public void testIntroduce(){
+        domesticCat.introduce();
+        assertTrue(log.getLog().contains(INTRODUCE_TEXT));
     }
 }
