@@ -4,6 +4,11 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
+import static org.mockito.Mockito.*;
 
 import static org.junit.Assert.*;
 
@@ -38,6 +43,12 @@ public class DomesticCatTest {
     public static String TOSTRING_SECOND_PART = "My color is ";
     public static String TOSTRING_THIRD_PART = " years old";
     public static String INTRODUCE_TEXT = "I'm Blacky-The-DomesticCat";
+
+    @Mock
+    private ZwergSchnautzer zwergSchnautzerMock;
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
@@ -118,11 +129,12 @@ public class DomesticCatTest {
 
     @Test
     public void testPlay() {
-        ZwergSchnautzer zwergSchnautzer = new ZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
         domesticCat.setHunger(HUNGER_AFTER_FEED);
-        domesticCat.play(zwergSchnautzer);
+        domesticCat.play(zwergSchnautzerMock);
         assertTrue(log.getLog().contains(PLAY_REPORT));
         assertEquals(HUNGER_AFTER_PLAY, domesticCat.getHunger());
+        verify(zwergSchnautzerMock).incrementHunger();
+        verify(zwergSchnautzerMock).getName();
     }
 
     @Test
