@@ -13,18 +13,18 @@ public class ForestService {
     private PlantService plantService;
     private AnimalService animalService;
 
-    public ForestService() {
-        this.plantService = new PlantService();
-        this.animalService = new AnimalService();
+    public ForestService(PlantService plantService, AnimalService animalService) {
+        this.plantService = plantService;
+        this.animalService = animalService;
     }
 
     public Forest createForest() {
         Forest forest = new Forest();
-        forest.setBiotope(getInhabitants());
+        forest.setBiotope(createInhabitants());
         return forest;
     }
 
-    private List<LifeForm> getInhabitants() {
+    private List<LifeForm> createInhabitants() {
         Plant pine = plantService.createPine();
         Plant heather = plantService.createHeather();
         Raccoon inocek = animalService.createRaccoon();

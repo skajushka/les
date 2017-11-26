@@ -1,5 +1,7 @@
 package com.forest;
 
+import com.forest.lifeform.animal.AnimalService;
+import com.forest.lifeform.plant.PlantService;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,7 +16,7 @@ public class ForestServiceTest {
 
     @Before
     public void setUp() {
-        this.forestService = new ForestService();
+        this.forestService = new ForestService(new PlantService(), new AnimalService());
     }
 
     @Test
