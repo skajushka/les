@@ -8,29 +8,29 @@ public class AnimalServiceTest {
 
     private static String DEFAULT_RACCOON_NAME = "Kroshka";
     private static String DEFAULT_RACCOON_COLOR = "grey";
-    private static char DEFAULT_RACCOON_SEX = 'F';
+    private static Sex DEFAULT_RACCOON_SEX = Sex.FEMALE;
     private static int DEFAULT_RACCOON_AGE = 5;
     private static String RACCOON_NAME = "Kacechka";
     private static String RACCOON_COLOR = "red";
-    private static char RACCOON_SEX = 'F';
+    private static Sex RACCOON_SEX = Sex.FEMALE;
     private static int RACCOON_AGE = 32;
 
     private static String DEFAULT_CAT_NAME = "Pipka";
     private static String DEFAULT_CAT_COLOR = "tricolor";
-    private static char DEFAULT_CAT_SEX = 'F';
+    private static Sex DEFAULT_CAT_SEX = Sex.FEMALE;
     private static int DEFAULT_CAT_AGE = 3;
     private static String CAT_NAME = "Pushynka";
     private static String CAT_COLOR = "grey";
-    private static char CAT_SEX = 'F';
+    private static Sex CAT_SEX = Sex.FEMALE;
     private static int CAT_AGE = 10;
 
     private static String DEFAULT_DOG_NAME = "Charka";
     private static String DEFAULT_DOG_COLOR = "black";
-    private static char DEFAULT_DOG_SEX = 'M';
+    private static Sex DEFAULT_DOG_SEX = Sex.MALE;
     private static int DEFAULT_DOG_AGE = 5;
     private static String DOG_NAME = "Barabaka";
     private static String DOG_COLOR = "white";
-    private static char DOG_SEX = 'M';
+    private static Sex DOG_SEX = Sex.MALE;
     private static int DOG_AGE = 7;
 
     private AnimalService animalService;

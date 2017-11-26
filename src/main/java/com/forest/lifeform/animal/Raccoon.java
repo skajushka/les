@@ -14,7 +14,7 @@ public class Raccoon extends AnimalImpl {
 
     Collection<Flower> flowers;
 
-    public Raccoon(String name, String color, char sex, int age) {
+    public Raccoon(String name, String color, Sex sex, int age) {
         super(name, color, sex, age, MAX_HUNGER, SPECIES);
     }
 

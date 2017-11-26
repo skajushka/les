@@ -11,11 +11,11 @@ public class DomesticCatTest {
 
     public static String DEFAULT_CAT_NAME = "Blacky";
     public static String DEFAULT_CAT_COLOR = "black";
-    public static char DEFAULT_CAT_SEX = 'M';
+    public static Sex DEFAULT_CAT_SEX = Sex.MALE;
     public static int DEFAULT_CAT_AGE = 5;
     public static int DEFAULT_CAT_MAX_HUNGER = 3;
     public static String DEFAULT_CAT_SPECIES = "Fellis catus";
-    public static char ILLEGAL_SEX_ARG = 'G';
+    public static Sex ILLEGAL_SEX_ARG = null;
     public static String CAT_VOICE = "Mau-mau-mau!";
     public static int ZERO_HUNGER = 0;
     public static int NEGATIVE_HUNGER = -1;
@@ -28,7 +28,7 @@ public class DomesticCatTest {
     public static String FEED_REPORT = "Feeding";
     public static String DOG_NAME = "Pups";
     public static String DOG_COLOR = "gray";
-    public static char DOG_SEX = 'M';
+    public static Sex DOG_SEX = Sex.MALE;
     public static int DOG_AGE = 7;
     public static String PLAY_REPORT = "plays with ";
     public static int FEED_PORTIONS = 2;

@@ -3,18 +3,15 @@ package com.forest.lifeform.animal;
 import com.forest.lifeform.LifeFormImpl;
 
 abstract public class AnimalImpl extends LifeFormImpl implements Animal {
-
-    private static char FEMALE = 'F';
-    private static char MALE = 'M';
 		
 	protected String name;
-	protected char sex;
+	protected Sex sex;
 	protected int hunger;
 	protected int maxHunger;
 
-	public AnimalImpl(String name, String color, char sex, int age, int maxHunger, String species) {
-		if (sex != FEMALE && sex != MALE) {
-			throw new IllegalArgumentException("Incorrect sex!");
+	public AnimalImpl(String name, String color, Sex sex, int age, int maxHunger, String species) {
+		if (sex == null) {
+			throw new IllegalArgumentException("No sex defined!");
 		}
 
 		this.name = name;
@@ -34,13 +31,13 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 		this.name = name;
 	}
 
-	public char getSex() {
+	public Sex getSex() {
 		return sex;
 	}
 
-	public void setSex(char sex) {
-		if (sex != FEMALE && sex != MALE) {
-			throw new IllegalArgumentException("Incorrect sex!");
+	public void setSex(Sex sex) {
+		if (sex == null) {
+			throw new IllegalArgumentException("No sex defined!");
 		} else {
 			this.sex = sex;
 		}
@@ -112,9 +109,9 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 		result = result + "My color is " + this.color + "\n";
 		result = result + "I am " + this.age + " years old" + "\n";
 		
-		if (this.sex == FEMALE) {
+		if (this.sex == Sex.FEMALE) {
 			result = result + "I'm a girl";			
-		} else if (this.sex == MALE) {
+		} else if (this.sex == Sex.MALE) {
 			result = result + "I'm a boy";
 		}
 
