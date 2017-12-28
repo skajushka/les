@@ -30,19 +30,7 @@ abstract public class PlantImpl extends LifeFormImpl implements Plant {
 	public void introduce() {
 		System.out.println(toString());	
 	}
-	
-/*	public String aetas() {
-		String aetas;
-		
-		if (this.age == 1) {
-			aetas = " year old.";			
-		} else {
-			aetas = " years old.";
-		}
-		
-		return aetas;
-	}*/
-	
+
 	public String toString() {
 		String result = "";
 		result += "I'm the " + this.getClass().getSimpleName() + " named " + this.species + "\n";

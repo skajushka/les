@@ -7,7 +7,7 @@ abstract public class AnimalImpl extends LifeFormImpl implements Animal {
 	protected String name;
 	protected Sex sex;
 	protected int hunger;
-	protected int maxHunger;
+	protected final int maxHunger;
 
 	public AnimalImpl(String name, String color, Sex sex, int age, int maxHunger, String species) {
 		if (sex == null) {
