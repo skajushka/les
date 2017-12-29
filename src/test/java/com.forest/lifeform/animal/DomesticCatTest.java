@@ -14,7 +14,8 @@ public class DomesticCatTest extends AnimalTest {
     public static int DEFAULT_CAT_MAX_HUNGER = 3;
     public static String DEFAULT_CAT_SPECIES = "Fellis catus";
     public static String CAT_VOICE = "Mau-mau-mau!";
-    public static String INTRODUCE_TEXT = "I'm Blacky-The-DomesticCat";
+    public static String CAT_INTRODUCE_TEXT = "I'm Blacky-The-DomesticCat";
+    public static int CAT_HUNGER_AFTER_FEED = 1;
 
     @Before
     public void setUp() {
@@ -42,6 +43,14 @@ public class DomesticCatTest extends AnimalTest {
     }
 
     @Test
+    public void testFeed(){
+        animal.setHunger(animal.getMaxHunger());
+        animal.feed(FEED_PORTIONS);
+        assertTrue(log.getLog().contains(FEED_REPORT));
+        assertEquals(CAT_HUNGER_AFTER_FEED, animal.getHunger());
+    }
+
+    @Test
     public void testCatVoice(){
         animal.voice();
         assertTrue(log.getLog().contains(CAT_VOICE));
@@ -50,6 +59,6 @@ public class DomesticCatTest extends AnimalTest {
     @Test
     public void testIntroduce(){
         animal.introduce();
-        assertTrue(log.getLog().contains(INTRODUCE_TEXT));
+        assertTrue(log.getLog().contains(CAT_INTRODUCE_TEXT));
     }
 }

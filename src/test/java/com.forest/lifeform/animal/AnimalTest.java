@@ -24,14 +24,14 @@ public abstract class AnimalTest {
     public static String FEED_REPORT = "Feeding";
     public static String PLAY_REPORT = "plays with ";
     public static int FEED_PORTIONS = 2;
-    public static int HUNGER_AFTER_FEED = 1;
+    public static int HUNGER_BEFORE_PLAY = 1;
     public static int HUNGER_AFTER_PLAY = 2;
     public static String TOSTRING_ONE_PART = "I'm ";
     public static String TOSTRING_SECOND_PART = "My color is ";
     public static String TOSTRING_THIRD_PART = " years old";
 
     @Mock
-    private ZwergSchnautzer zwergSchnautzerMock;
+    private Dog dogMock;
 
     @Rule
     public MockitoRule mockitoRule = MockitoJUnit.rule();
@@ -75,21 +75,13 @@ public abstract class AnimalTest {
     }
 
     @Test
-    public void testFeed(){
-        animal.setHunger(animal.getMaxHunger());
-        animal.feed(FEED_PORTIONS);
-        assertTrue(log.getLog().contains(FEED_REPORT));
-        assertEquals(HUNGER_AFTER_FEED, animal.getHunger());
-    }
-
-    @Test
     public void testPlay() {
-        animal.setHunger(HUNGER_AFTER_FEED);
-        animal.play(zwergSchnautzerMock);
+        animal.setHunger(HUNGER_BEFORE_PLAY);
+        animal.play(dogMock);
         assertTrue(log.getLog().contains(PLAY_REPORT));
         assertEquals(HUNGER_AFTER_PLAY, animal.getHunger());
-        verify(zwergSchnautzerMock).incrementHunger();
-        verify(zwergSchnautzerMock).getName();
+        verify(dogMock).incrementHunger();
+        verify(dogMock).getName();
     }
 
     @Test

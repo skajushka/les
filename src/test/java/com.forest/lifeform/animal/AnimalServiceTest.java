@@ -82,21 +82,21 @@ public class AnimalServiceTest {
 
     @Test
     public void createZwergSchnautzer() {
-        ZwergSchnautzer zwergSchnautzer = animalService.createZwergSchnautzer();
-        assertNotNull(zwergSchnautzer);
-        assertEquals(DEFAULT_DOG_NAME, zwergSchnautzer.getName());
-        assertEquals(DEFAULT_DOG_COLOR, zwergSchnautzer.getColor());
-        assertEquals(DEFAULT_DOG_SEX, zwergSchnautzer.getSex());
-        assertEquals(DEFAULT_DOG_AGE, zwergSchnautzer.getAge());
+        Dog dog = animalService.createZwergSchnautzer();
+        assertNotNull(dog);
+        assertEquals(DEFAULT_DOG_NAME, dog.getName());
+        assertEquals(DEFAULT_DOG_COLOR, dog.getColor());
+        assertEquals(DEFAULT_DOG_SEX, dog.getSex());
+        assertEquals(DEFAULT_DOG_AGE, dog.getAge());
     }
 
     @Test
     public void createZwergSchnautzerNotPredefined() {
-        ZwergSchnautzer zwergSchnautzer = animalService.createZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
-        assertNotNull(zwergSchnautzer);
-        assertEquals(DOG_NAME, zwergSchnautzer.getName());
-        assertEquals(DOG_COLOR, zwergSchnautzer.getColor());
-        assertEquals(DOG_SEX, zwergSchnautzer.getSex());
-        assertEquals(DOG_AGE, zwergSchnautzer.getAge());
+        Dog dog = animalService.createZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
+        assertNotNull(dog);
+        assertEquals(DOG_NAME, dog.getName());
+        assertEquals(DOG_COLOR, dog.getColor());
+        assertEquals(DOG_SEX, dog.getSex());
+        assertEquals(DOG_AGE, dog.getAge());
     }
 }

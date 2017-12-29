@@ -31,11 +31,11 @@ public class AnimalService {
         return new DomesticCat(name, color, sex, age);
     }
 
-    public ZwergSchnautzer createZwergSchnautzer() {
+    public Dog createZwergSchnautzer() {
         return createZwergSchnautzer(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE);
     }
 
-    public ZwergSchnautzer createZwergSchnautzer(String name, String color, Sex sex, int age) {
-        return new ZwergSchnautzer(name, color, sex, age);
+    public Dog createZwergSchnautzer(String name, String color, Sex sex, int age) {
+        return new Dog(name, color, sex, age);
     }
 }
