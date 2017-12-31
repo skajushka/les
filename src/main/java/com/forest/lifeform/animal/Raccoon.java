@@ -11,8 +11,7 @@ public class Raccoon extends AnimalImpl {
 
     private static int MAX_HUNGER = 4;
     private static String SPECIES = "Procyon lotor";
-
-    Collection<Flower> flowers;
+    private Collection<Flower> flowers;
 
     public Raccoon(String name, String color, Sex sex, int age) {
         super(name, color, sex, age, MAX_HUNGER, SPECIES);

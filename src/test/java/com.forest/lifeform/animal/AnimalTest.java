@@ -39,7 +39,7 @@ public abstract class AnimalTest {
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
 
-    protected AnimalImpl animal;
+    protected Animal animal;
 
     @Test
     public void testSetZeroHunger(){
