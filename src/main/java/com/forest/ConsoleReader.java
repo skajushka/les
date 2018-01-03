@@ -40,7 +40,7 @@ public class ConsoleReader {
         System.out.println(messages.get(FIRST_VAR));
         System.out.println(messages.get(SECOND_VAR));
 
-        Integer option = null;
+        Integer option;
 
         try {
             option = Integer.parseInt(bufferedReader.readLine());
