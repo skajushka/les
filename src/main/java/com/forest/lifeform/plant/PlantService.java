@@ -13,9 +13,6 @@ public class PlantService {
     private static int DEFAULT_BELLFLOWER_AGE = 1;
     private static double DEFAULT_BELLFLOWER_HEIGHT = 10;
 
-
-
-
     public Pine createPine() {
         return createPine(DEFAULT_PINE_AGE, DEFAULT_PINE_HEIGHT);
     }

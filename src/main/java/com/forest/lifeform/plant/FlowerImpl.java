@@ -1,8 +1,8 @@
 package com.forest.lifeform.plant;
 
-public class FlowerImpl extends PlantImpl implements Flower {
+public abstract class FlowerImpl extends PlantImpl implements Flower {
 
-    public FlowerImpl(String color, int age, double height, String species) {
+  public FlowerImpl(String color, int age, double height, String species) {
         super(color, age, height, species);
     }
 }
