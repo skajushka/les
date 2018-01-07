@@ -33,20 +33,22 @@ public class ConsoleReader {
         this.messages = properties;
     }
 
-    public boolean startJourney() throws IOException {
+    public boolean startJourney() {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(messages.get(INIT_QUESTION));
         System.out.println(messages.get(FIRST_VAR));
         System.out.println(messages.get(SECOND_VAR));
 
-        Integer option;
+        Integer option = null;
 
         try {
             option = Integer.parseInt(bufferedReader.readLine());
         } catch (NumberFormatException e) {
             System.out.println(messages.get(WRONG_NUMBER));
             option = 0;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         switch (option) {
