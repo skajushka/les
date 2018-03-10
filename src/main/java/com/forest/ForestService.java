@@ -20,6 +20,8 @@ public class ForestService {
 
     public Forest createForest() {
         Forest forest = new Forest();
+        Raccoon raccoon = animalService.createRaccoon();
+        forest.setRaccoon(raccoon);
         forest.setBiotope(createInhabitants());
         return forest;
     }
@@ -27,12 +29,12 @@ public class ForestService {
     private List<LifeForm> createInhabitants() {
         Plant pine = plantService.createPine();
         Plant heather = plantService.createHeather();
-        Raccoon inocek = animalService.createRaccoon();
+        Dog dog = animalService.createZwergSchnautzer();
 
         List<LifeForm> inhabitants = new ArrayList<LifeForm>();
         inhabitants.add(pine);
         inhabitants.add(heather);
-        inhabitants.add(inocek);
+        inhabitants.add(dog);
         return inhabitants;
     }
 }

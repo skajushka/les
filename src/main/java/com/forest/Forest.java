@@ -2,6 +2,7 @@ package com.forest;
 
 import com.forest.lifeform.LifeForm;
 import com.forest.lifeform.animal.Animal;
+import com.forest.lifeform.animal.Raccoon;
 import com.forest.lifeform.plant.Plant;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 public class Forest {
 
     private List<LifeForm> biotope = new ArrayList<LifeForm>();
+    private Raccoon raccoon;
 
     public void setBiotope(List<LifeForm> biotope) {
         this.biotope = biotope;
@@ -44,7 +46,15 @@ public class Forest {
     }
 
     public void addLifeform(LifeForm lifeForm) {
-        biotope.add(lifeForm);
+        this.biotope.add(lifeForm);
+    }
+
+    public void setRaccoon(Raccoon raccoon) {
+        this.raccoon = raccoon;
+    }
+
+    public Raccoon getRaccoon() {
+        return raccoon;
     }
 
     public String toString() {

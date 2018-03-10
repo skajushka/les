@@ -1,6 +1,5 @@
 package com.forest.tale;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
