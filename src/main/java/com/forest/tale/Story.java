@@ -3,11 +3,8 @@ package com.forest.tale;
 import com.forest.ConsoleReader;
 import com.forest.Forest;
 import com.forest.ForestService;
-import com.forest.lifeform.animal.AnimalService;
-import com.forest.lifeform.animal.DomesticCat;
-import com.forest.lifeform.animal.Raccoon;
-import com.forest.lifeform.plant.Daisy;
-import com.forest.lifeform.plant.PlantService;
+import com.forest.lifeform.animal.*;
+import com.forest.lifeform.plant.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,14 +52,44 @@ public class Story {
         int selectedOption = consoleReader.proceedActions();
 
         if (selectedOption == 1) {
-            DomesticCat cat = animalService.createDomesticCat();
-            cat.introduce();
-            this.forest.addLifeform(cat);
+            int selectedAnimal = consoleReader.createAnimal();
+
+            if (selectedAnimal == 1) {
+                DomesticCat cat = animalService.createDomesticCat();
+                cat.introduce();
+                this.forest.addLifeform(cat);
+            } else if (selectedAnimal == 2) {
+                Dog dog = animalService.createZwergSchnautzer();
+                dog.introduce();
+                this.forest.addLifeform(dog);
+            } else {
+                System.out.println(messages.get(INVALID_ADDING_OPTION));
+            }
+
             System.out.println(this.forest);
         } else if (selectedOption == 2) {
-            Daisy daisy = plantService.createDaisy();
-            daisy.introduce();
-            this.forest.addLifeform(daisy);
+            int selectedPlant = consoleReader.createPlant();
+
+            if (selectedPlant == 1) {
+                Bellflower bellflower = plantService.createBellflower();
+                bellflower.introduce();
+                this.forest.addLifeform(bellflower);
+            } else if (selectedPlant == 2) {
+                Daisy daisy = plantService.createDaisy();
+                daisy.introduce();
+                this.forest.addLifeform(daisy);
+            } else if (selectedPlant == 3) {
+                Heather heather = plantService.createHeather();
+                heather.introduce();
+                this.forest.addLifeform(heather);
+            } else if (selectedPlant == 4) {
+                Pine pine = plantService.createPine();
+                pine.introduce();;
+                this.forest.addLifeform(pine);
+            } else {
+                System.out.println(messages.get(INVALID_ADDING_OPTION));
+            }
+
             System.out.println(this.forest);
         } else if (selectedOption == 3) {
             Raccoon inocek = forest.getRaccoon();

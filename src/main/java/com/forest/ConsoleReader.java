@@ -19,6 +19,12 @@ public class ConsoleReader {
     private static String ADD_ANIMAL = "adding.animals";
     private static String ADD_PLANT = "adding.plants";
     private static String COLLECT_FLOWERS = "collecting.flowers";
+    private static String ADD_CAT = "adding.cat";
+    private static String ADD_DOG = "adding.dog";
+    private static String ADD_BELLFLOWER = "adding.bellflower";
+    private static String ADD_DAISY = "adding.daisy";
+    private static String ADD_HEATHER = "adding.heather";
+    private static String ADD_PINE = "adding.pine";
 
     private Properties messages;
 
@@ -72,6 +78,46 @@ public class ConsoleReader {
         System.out.println(messages.get(ADD_ANIMAL));
         System.out.println(messages.get(ADD_PLANT));
         System.out.println(messages.get(COLLECT_FLOWERS));
+
+        Integer option = null;
+
+        try {
+            option = Integer.parseInt(bufferedReader.readLine());
+        } catch (NumberFormatException e) {
+            System.out.println(messages.get(WRONG_NUMBER));
+            option = 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return option;
+    }
+
+    public int createAnimal() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(messages.get(ADD_CAT));
+        System.out.println(messages.get(ADD_DOG));
+
+        Integer option = null;
+
+        try {
+            option = Integer.parseInt(bufferedReader.readLine());
+        } catch (NumberFormatException e) {
+            System.out.println(messages.get(WRONG_NUMBER));
+            option = 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return option;
+    }
+
+    public int createPlant() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(messages.get(ADD_BELLFLOWER));
+        System.out.println(messages.get(ADD_DAISY));
+        System.out.println(messages.get(ADD_HEATHER));
+        System.out.println(messages.get(ADD_PINE));
 
         Integer option = null;
 
