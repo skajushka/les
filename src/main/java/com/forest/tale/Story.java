@@ -58,13 +58,16 @@ public class Story {
             DomesticCat cat = animalService.createDomesticCat();
             cat.introduce();
             this.forest.addLifeform(cat);
+            System.out.println(this.forest);
         } else if (selectedOption == 2) {
             Daisy daisy = plantService.createDaisy();
             daisy.introduce();
             this.forest.addLifeform(daisy);
+            System.out.println(this.forest);
         } else if (selectedOption == 3) {
             Raccoon inocek = forest.getRaccoon();
             inocek.pickFlowers();
+            System.out.println("Now I have " + inocek.getFlowers().size() + " flowers!");
         } else {
             System.out.println(messages.get(INVALID_ADDING_OPTION));
         }

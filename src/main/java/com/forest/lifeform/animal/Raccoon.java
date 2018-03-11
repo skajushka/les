@@ -11,10 +11,12 @@ public class Raccoon extends AnimalImpl {
 
     private static int MAX_HUNGER = 4;
     private static String SPECIES = "Procyon lotor";
+
     private Collection<Flower> flowers;
 
     public Raccoon(String name, String color, Sex sex, int age) {
         super(name, color, sex, age, MAX_HUNGER, SPECIES);
+        this.flowers = new ArrayList<Flower>();
     }
 
     public void setFlowers(Collection<Flower> flowers) {
@@ -30,7 +32,7 @@ public class Raccoon extends AnimalImpl {
         System.out.println("Uru-ru-ru!");
     }
 
-    public void pickFlowers () {
+    public void pickFlowers() {
         Collection<Flower> bouquette = new ArrayList<Flower>();
         int quantityDaisy = (int)(Math.random() * 10);
         int quantityBellflower = (int)(Math.random() * 10);
@@ -43,7 +45,11 @@ public class Raccoon extends AnimalImpl {
             bouquette.add(new Bellflower("blue", 1, 2));
         }
 
-        setFlowers(bouquette);
+        addFlowers(bouquette);
         System.out.println("Raccoon says: I went to forest and picked " + bouquette.size() + " flowers!");
+    }
+
+    public void addFlowers(Collection<Flower> bouquette) {
+        this.flowers.addAll(bouquette);
     }
 }
