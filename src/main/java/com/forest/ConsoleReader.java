@@ -3,7 +3,6 @@ package com.forest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Properties;
 
 public class ConsoleReader {
@@ -28,8 +27,7 @@ public class ConsoleReader {
 
     private Properties messages;
 
-    public ConsoleReader(){
-
+    public ConsoleReader() {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         Properties properties = new Properties();
 
@@ -43,24 +41,11 @@ public class ConsoleReader {
     }
 
     public boolean startJourney() {
-
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(messages.get(INIT_QUESTION));
         System.out.println(messages.get(AGREE));
         System.out.println(messages.get(DECLINE));
 
-        Integer option = null;
-
-        try {
-            option = Integer.parseInt(bufferedReader.readLine());
-        } catch (NumberFormatException e) {
-            System.out.println(messages.get(WRONG_NUMBER));
-            option = 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        switch (option) {
+        switch (readOption()) {
             case 1:
                 return true;
             case 2:
@@ -73,60 +58,41 @@ public class ConsoleReader {
     }
 
     public int proceedActions() {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(messages.get(PROCEED_ACTIONS));
         System.out.println(messages.get(ADD_ANIMAL));
         System.out.println(messages.get(ADD_PLANT));
         System.out.println(messages.get(COLLECT_FLOWERS));
 
-        Integer option = null;
-
-        try {
-            option = Integer.parseInt(bufferedReader.readLine());
-        } catch (NumberFormatException e) {
-            System.out.println(messages.get(WRONG_NUMBER));
-            option = 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return option;
+        return readOption();
     }
 
     public int createAnimal() {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(messages.get(ADD_CAT));
         System.out.println(messages.get(ADD_DOG));
 
-        Integer option = null;
-
-        try {
-            option = Integer.parseInt(bufferedReader.readLine());
-        } catch (NumberFormatException e) {
-            System.out.println(messages.get(WRONG_NUMBER));
-            option = 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return option;
+        return readOption();
     }
 
-    public int createPlant() {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public int createPlant () {
         System.out.println(messages.get(ADD_BELLFLOWER));
         System.out.println(messages.get(ADD_DAISY));
         System.out.println(messages.get(ADD_HEATHER));
         System.out.println(messages.get(ADD_PINE));
 
+        return readOption();
+    }
+
+    private int readOption() {
+        BufferedReader reader = BufferedReaderFactory.getInstance();
+
         Integer option = null;
 
         try {
-            option = Integer.parseInt(bufferedReader.readLine());
+            option = Integer.parseInt(reader.readLine());
         } catch (NumberFormatException e) {
             System.out.println(messages.get(WRONG_NUMBER));
             option = 0;
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
