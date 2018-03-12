@@ -46,7 +46,7 @@ public class Raccoon extends AnimalImpl {
         }
 
         addFlowers(bouquette);
-        System.out.println("Raccoon says: I went to forest and picked " + bouquette.size() + " flowers!");
+        System.out.println("Raccoon says: I went to the Forest and picked " + bouquette.size() + " flowers!");
     }
 
     public void addFlowers(Collection<Flower> bouquette) {
