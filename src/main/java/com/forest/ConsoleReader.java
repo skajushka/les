@@ -17,6 +17,7 @@ public class ConsoleReader {
     private static String ADD_ANIMAL = "adding.animals";
     private static String ADD_PLANT = "adding.plants";
     private static String COLLECT_FLOWERS = "collecting.flowers";
+    private static String ENDING_STORY = "ending.story";
     private static String ADD_CAT = "adding.cat";
     private static String ADD_DOG = "adding.dog";
     private static String ADD_BELLFLOWER = "adding.bellflower";
@@ -52,6 +53,7 @@ public class ConsoleReader {
         System.out.println(messages.get(ADD_ANIMAL));
         System.out.println(messages.get(ADD_PLANT));
         System.out.println(messages.get(COLLECT_FLOWERS));
+        System.out.println(messages.get(ENDING_STORY));
 
         return readOption();
     }

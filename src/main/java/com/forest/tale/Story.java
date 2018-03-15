@@ -43,21 +43,30 @@ public class Story {
     public void proceed() {
         int selectedOption = consoleReader.proceedActions();
 
-        if (selectedOption == 1) {
-            createSelectedAnimal();
-            System.out.println(this.forest);
-        } else if (selectedOption == 2) {
-            createSelectedPlant();
-            System.out.println(this.forest);
-        } else if (selectedOption == 3) {
-            Raccoon inocek = forest.getRaccoon();
-            inocek.pickFlowers();
-            System.out.println("Now I have " + inocek.getFlowers().size() + " flowers!");
-        } else {
-            System.out.println(messages.get(INVALID_ADDING_OPTION));
+        switch(selectedOption) {
+            case 1:
+                createSelectedAnimal();
+                System.out.println(this.forest);
+                proceed();
+                break;
+            case 2:
+                createSelectedPlant();
+                System.out.println(this.forest);
+                proceed();
+                break;
+            case 3:
+                Raccoon inocek = forest.getRaccoon();
+                inocek.pickFlowers();
+                System.out.println("Now I have " + inocek.getFlowers().size() + " flowers!");
+                proceed();
+                break;
+            case 4:
+                end();
+                break;
+            default:
+                System.out.println(messages.get(INVALID_ADDING_OPTION));
+                break;
         }
-
-        proceed();
     }
 
     public void createSelectedAnimal(){
