@@ -3,11 +3,10 @@ package com.forest.tale;
 import com.forest.ConsoleReader;
 import com.forest.Forest;
 import com.forest.ForestService;
+import com.forest.ResourceFactory;
 import com.forest.lifeform.animal.*;
 import com.forest.lifeform.plant.*;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class Story {
@@ -23,20 +22,12 @@ public class Story {
     private PlantService plantService;
 
     public Story() {
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        Properties properties = new Properties();
-
-        try (InputStream resourceStream = classLoader.getResourceAsStream(RESOURCE_PATH)) {
-            properties.load(resourceStream);
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        this.messages = ResourceFactory.getResources(Story.RESOURCE_PATH);
 
         this.consoleReader = new ConsoleReader();
         this.storyTeller = new StoryTeller();
         this.animalService = new AnimalService();
         this.plantService = new PlantService();
-        this.messages = properties;
     }
 
     public void start() {

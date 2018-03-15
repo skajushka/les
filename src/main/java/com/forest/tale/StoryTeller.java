@@ -1,28 +1,19 @@
 package com.forest.tale;
 
-import java.io.IOException;
-import java.io.InputStream;
+import com.forest.ResourceFactory;
+
 import java.util.Properties;
 
 public class StoryTeller {
 
+    private static String RESOURCE_PATH = "storyTeller/messages.properties";
     private static String BEGIN_STORY = "story.begin";
     private static String END_STORY = "story.end";
-    private static String RESOURCE_PATH = "storyTeller/messages.properties";
 
     private Properties messages;
 
     public StoryTeller() {
-        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        Properties properties = new Properties();
-
-        try(InputStream resourceStream = classloader.getResourceAsStream(RESOURCE_PATH)) {
-            properties.load(resourceStream);
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-
-        this.messages = properties;
+        this.messages = ResourceFactory.getResources(StoryTeller.RESOURCE_PATH);
     }
 
     public void beginTheStory() {
