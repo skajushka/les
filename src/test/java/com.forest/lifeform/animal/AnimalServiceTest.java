@@ -62,7 +62,7 @@ public class AnimalServiceTest {
 
     @Test
     public void createDomesticCat() {
-        DomesticCat domesticCat = animalService.createDomesticCat();
+        Cat domesticCat = animalService.createCat();
         assertNotNull(domesticCat);
         assertEquals(DEFAULT_CAT_NAME, domesticCat.getName());
         assertEquals(DEFAULT_CAT_COLOR, domesticCat.getColor());
@@ -72,7 +72,7 @@ public class AnimalServiceTest {
 
     @Test
     public void createDomesticCatNotPredefined() {
-        DomesticCat domesticCat = animalService.createDomesticCat(CAT_NAME, CAT_COLOR, CAT_SEX, CAT_AGE);
+        Cat domesticCat = animalService.createCat(CAT_NAME, CAT_COLOR, CAT_SEX, CAT_AGE);
         assertNotNull(domesticCat);
         assertEquals(CAT_NAME, domesticCat.getName());
         assertEquals(CAT_COLOR, domesticCat.getColor());
@@ -82,7 +82,7 @@ public class AnimalServiceTest {
 
     @Test
     public void createZwergSchnautzer() {
-        Dog dog = animalService.createZwergSchnautzer();
+        Dog dog = animalService.createDog();
         assertNotNull(dog);
         assertEquals(DEFAULT_DOG_NAME, dog.getName());
         assertEquals(DEFAULT_DOG_COLOR, dog.getColor());
@@ -92,7 +92,7 @@ public class AnimalServiceTest {
 
     @Test
     public void createZwergSchnautzerNotPredefined() {
-        Dog dog = animalService.createZwergSchnautzer(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
+        Dog dog = animalService.createDog(DOG_NAME, DOG_COLOR, DOG_SEX, DOG_AGE);
         assertNotNull(dog);
         assertEquals(DOG_NAME, dog.getName());
         assertEquals(DOG_COLOR, dog.getColor());

@@ -23,19 +23,19 @@ public class AnimalService {
         return new Raccoon(name, color, sex, age);
     }
 
-    public DomesticCat createDomesticCat() {
-        return createDomesticCat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
+    public Cat createCat() {
+        return createCat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
     }
 
-    public DomesticCat createDomesticCat(String name, String color, Sex sex, int age) {
-        return new DomesticCat(name, color, sex, age);
+    public Cat createCat(String name, String color, Sex sex, int age) {
+        return new Cat(name, color, sex, age);
     }
 
-    public Dog createZwergSchnautzer() {
-        return createZwergSchnautzer(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE);
+    public Dog createDog() {
+        return createDog(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE);
     }
 
-    public Dog createZwergSchnautzer(String name, String color, Sex sex, int age) {
+    public Dog createDog(String name, String color, Sex sex, int age) {
         return new Dog(name, color, sex, age);
     }
 }

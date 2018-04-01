@@ -50,7 +50,7 @@ public class DogTest extends AnimalTest {
     }
 
     @Test
-    public void testCatVoice(){
+    public void testDogVoice(){
         animal.voice();
         assertTrue(log.getLog().contains(DOG_VOICE));
     }

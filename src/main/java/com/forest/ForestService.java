@@ -29,7 +29,7 @@ public class ForestService {
     private List<LifeForm> createInhabitants() {
         Plant pine = plantService.createPine();
         Plant heather = plantService.createHeather();
-        Dog dog = animalService.createZwergSchnautzer();
+        Dog dog = animalService.createDog();
 
         List<LifeForm> inhabitants = new ArrayList<LifeForm>();
         inhabitants.add(pine);

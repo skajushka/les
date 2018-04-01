@@ -73,11 +73,11 @@ public class Story {
         int selectedAnimal = consoleReader.createAnimal();
 
         if (selectedAnimal == 1) {
-            DomesticCat cat = animalService.createDomesticCat();
+            Cat cat = animalService.createCat();
             cat.introduce();
             this.forest.addLifeform(cat);
         } else if (selectedAnimal == 2) {
-            Dog dog = animalService.createZwergSchnautzer();
+            Dog dog = animalService.createDog();
             dog.introduce();
             this.forest.addLifeform(dog);
         } else {
