@@ -1,13 +1,11 @@
 package com.forest.lifeform.animal;
 
-import com.forest.lifeform.plant.Bellflower;
-import com.forest.lifeform.plant.Daisy;
 import com.forest.lifeform.plant.Flower;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Raccoon extends AnimalImpl {
+public class Raccoon extends Animal {
 
     private static int MAX_HUNGER = 4;
     private static String SPECIES = "Procyon lotor";
@@ -38,11 +36,11 @@ public class Raccoon extends AnimalImpl {
         int quantityBellflower = (int)(Math.random() * 10);
 
         for (int i = 0; i <= quantityDaisy; i++) {
-            bouquette.add(new Daisy("white", 1, 1));
+            bouquette.add(new Flower("white", 1, 1, "Daisy"));
         }
 
         for (int i = 0; i <= quantityBellflower; i++) {
-            bouquette.add(new Bellflower("blue", 1, 2));
+            bouquette.add(new Flower("blue", 1, 2, "Bellflower"));
         }
 
         addFlowers(bouquette);

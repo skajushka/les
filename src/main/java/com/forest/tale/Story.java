@@ -87,27 +87,28 @@ public class Story {
 
     public void createSelectedPlant() {
         int selectedPlant = consoleReader.createPlant();
+        Flower flower = null;
 
         switch (selectedPlant) {
             case 1:
-                Bellflower bellflower = plantService.createBellflower();
-                bellflower.introduce();
-                this.forest.addLifeform(bellflower);
+                flower = plantService.createFlower("green", 1, 1.3, "Bellflower");
+                flower.introduce();
+                this.forest.addLifeform(flower);
                 break;
             case 2:
-                Daisy daisy = plantService.createDaisy();
-                daisy.introduce();
-                this.forest.addLifeform(daisy);
+                flower = plantService.createFlower("green", 1, 1.3, "Daisy");
+                flower.introduce();
+                this.forest.addLifeform(flower);
                 break;
             case 3:
-                Heather heather = plantService.createHeather();
-                heather.introduce();
-                this.forest.addLifeform(heather);
+                Bush bush = plantService.createHeather();
+                bush.introduce();
+                this.forest.addLifeform(bush);
                 break;
             case 4:
-                Pine pine = plantService.createPine();
-                pine.introduce();;
-                this.forest.addLifeform(pine);
+                Tree tree = plantService.createPine();
+                tree.introduce();;
+                this.forest.addLifeform(tree);
                 break;
             default:
                 System.out.println(messages.get(INVALID_ADDING_OPTION));

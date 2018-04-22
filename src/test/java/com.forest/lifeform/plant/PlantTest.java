@@ -26,7 +26,7 @@ public abstract class PlantTest {
 
     @Test
     public void testCheckGrow() {
-        plant = new Daisy(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT);
+        plant = new Flower(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT, "Daisy");
         plant.grow(DEFAULT_ENERGY);
         assertEquals(HEIGHT_AFTER_GROW, plant.getHeight(), DELTA);
     }

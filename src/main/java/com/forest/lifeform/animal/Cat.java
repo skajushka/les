@@ -1,6 +1,6 @@
 package com.forest.lifeform.animal;
 
-public class Cat extends AnimalImpl {
+public class Cat extends Animal {
 
 	private static int MAX_HUNGER = 3;
 	private static String SPECIES = "Fellis catus";

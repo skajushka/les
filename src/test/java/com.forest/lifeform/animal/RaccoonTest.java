@@ -26,10 +26,7 @@ public class RaccoonTest extends AnimalTest {
     private Raccoon raccoon;
 
     @Mock
-    private Daisy daisyMock;
-
-    @Mock
-    private Bellflower bellflowerMock;
+    private Flower daisyMock;
 
     @Before
     public void setUp() {
@@ -80,8 +77,8 @@ public class RaccoonTest extends AnimalTest {
     @Test
     public void checkMockBouquette() {
         Collection<Flower> mockBouquette = new ArrayList<Flower>();
-        mockBouquette.add(bellflowerMock);
-        mockBouquette.add(bellflowerMock);
+        mockBouquette.add(daisyMock);
+        mockBouquette.add(daisyMock);
         mockBouquette.add(daisyMock);
         mockBouquette.add(daisyMock);
         mockBouquette.add(daisyMock);
@@ -93,18 +90,12 @@ public class RaccoonTest extends AnimalTest {
     @Test
     public void checkPickFlowers() {
         raccoon.pickFlowers();
-        Boolean hasDaisies = Boolean.FALSE;
         Boolean hasBellflowers = Boolean.FALSE;
 
         for (Flower flower : raccoon.getFlowers()) {
-            if (flower instanceof Daisy) {
-                hasDaisies = Boolean.TRUE;
-            } else if (flower instanceof Bellflower) {
-                hasBellflowers = Boolean.TRUE;
-            }
+            hasBellflowers = Boolean.TRUE;
         }
 
-        assertTrue(hasDaisies);
         assertTrue(hasBellflowers);
     }
 }

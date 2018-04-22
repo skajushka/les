@@ -28,7 +28,7 @@ public class AnimalService {
     }
 
     public Cat createCat(String name, String color, Sex sex, int age) {
-        return new Cat(name, color, sex, age);
+        return new Cat(name, color, sex, age, CatBreed.WILD_CAT);
     }
 
     public Dog createDog() {
@@ -36,6 +36,6 @@ public class AnimalService {
     }
 
     public Dog createDog(String name, String color, Sex sex, int age) {
-        return new Dog(name, color, sex, age);
+        return new Dog(name, color, sex, age, DogBreed.LABRADOR);
     }
 }

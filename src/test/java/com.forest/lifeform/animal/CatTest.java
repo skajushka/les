@@ -19,7 +19,7 @@ public class CatTest extends AnimalTest {
 
     @Before
     public void setUp() {
-        animal = new Cat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE);
+        animal = new Cat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, DEFAULT_CAT_SEX, DEFAULT_CAT_AGE, CatBreed.DOMESTIC_CAT);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class CatTest extends AnimalTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void checkSexException(){
-        this.animal = new Cat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, ILLEGAL_SEX_ARG, DEFAULT_CAT_AGE);
+        this.animal = new Cat(DEFAULT_CAT_NAME, DEFAULT_CAT_COLOR, ILLEGAL_SEX_ARG, DEFAULT_CAT_AGE, CatBreed.DOMESTIC_CAT);
     }
 
     @Test

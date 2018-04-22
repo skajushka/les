@@ -18,7 +18,7 @@ public class DogTest extends AnimalTest {
 
     @Before
     public void setUp() {
-        animal = new Dog(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE);
+        animal = new Dog(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, DEFAULT_DOG_SEX, DEFAULT_DOG_AGE, DogBreed.BEAGLE);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class DogTest extends AnimalTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void checkSexException(){
-        this.animal = new Dog(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, ILLEGAL_SEX_ARG, DEFAULT_DOG_AGE);
+        this.animal = new Dog(DEFAULT_DOG_NAME, DEFAULT_DOG_COLOR, ILLEGAL_SEX_ARG, DEFAULT_DOG_AGE, DogBreed.BEAGLE);
     }
 
     @Test

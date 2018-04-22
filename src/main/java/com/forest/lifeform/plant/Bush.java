@@ -1,11 +1,11 @@
 package com.forest.lifeform.plant;
 
-public class Heather extends PlantImpl {
+public class Bush extends Plant {
 
     private static String COLOR = "dark green";
 	private static String SPECIES = "Erica vulgaris";
 	
-	public Heather (int age, double height) {
-		super (COLOR, age, height, SPECIES);
+	public Bush(int age, double height, String species) {
+		super (COLOR, age, height, species);
 	}
 }
