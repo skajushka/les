@@ -61,7 +61,7 @@ public class Story {
                 proceed();
                 break;
             case 4:
-                end();
+                storyTeller.endTheStory();
                 break;
             default:
                 System.out.println(messages.get(INVALID_ADDING_OPTION));
@@ -87,7 +87,7 @@ public class Story {
 
     public void createSelectedPlant() {
         int selectedPlant = consoleReader.createPlant();
-        Flower flower = null;
+        Plant flower = null;
 
         switch (selectedPlant) {
             case 1:
@@ -114,9 +114,5 @@ public class Story {
                 System.out.println(messages.get(INVALID_ADDING_OPTION));
                 break;
         }
-    }
-
-    public void end() {
-        storyTeller.endTheStory();
     }
 }

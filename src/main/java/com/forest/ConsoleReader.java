@@ -22,8 +22,8 @@ public class ConsoleReader {
     private static String ADD_DOG = "adding.dog";
     private static String ADD_BELLFLOWER = "adding.bellflower";
     private static String ADD_DAISY = "adding.daisy";
-    private static String ADD_HEATHER = "adding.heather";
-    private static String ADD_PINE = "adding.pine";
+    private static String ADD_HEATHER = "adding.bush";
+    private static String ADD_PINE = "adding.tree";
 
     private Properties messages;
 
