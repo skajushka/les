@@ -1,5 +1,6 @@
 package com.forest.lifeform.plant;
 
+import com.forest.lifeform.Species;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -10,16 +11,17 @@ public class DaisyTest extends PlantTest {
     public static String DEFAULT_DAISY_COLOR = "white";
     public static int DEFAULT_DAISY_AGE = 1;
     public static double DEFAULT_DAISY_HEIGHT = 10;
-    public static String DEFAULT_DAISY_SPECIES = "Daisy";
+    public static Species species;
     public static String DAISY_INTRODUCE_MESSAGE = "I'm the Flower named Daisy";
+
     @Before
     public void setUp() {
-        plant = new Flower(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT, "Daisy");
+        plant = new Flower(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT, Species.DAISY);
     }
 
     @Test
     public void checkDefaultConstructorValues() {
-        assertEquals(DEFAULT_DAISY_SPECIES, plant.getSpecies());
+        assertEquals(Species.DAISY, plant.getSpecies());
     }
 
     @Test

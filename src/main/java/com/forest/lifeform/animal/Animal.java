@@ -1,6 +1,7 @@
 package com.forest.lifeform.animal;
 
 import com.forest.lifeform.LifeForm;
+import com.forest.lifeform.Species;
 
 abstract public class Animal extends LifeForm {
 		
@@ -9,7 +10,7 @@ abstract public class Animal extends LifeForm {
 	protected int hunger;
 	protected final int maxHunger;
 
-	public Animal(String name, String color, Sex sex, int age, int maxHunger, String species) {
+	public Animal(String name, String color, Sex sex, int age, int maxHunger, Species species) {
 		if (sex == null) {
 			throw new IllegalArgumentException("No sex defined!");
 		}

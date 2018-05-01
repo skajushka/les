@@ -4,6 +4,7 @@ import com.forest.ConsoleReader;
 import com.forest.Forest;
 import com.forest.ForestService;
 import com.forest.ResourceFactory;
+import com.forest.lifeform.Species;
 import com.forest.lifeform.animal.*;
 import com.forest.lifeform.plant.*;
 
@@ -13,6 +14,7 @@ public class Story {
 
     private static String RESOURCE_PATH = "storyTeller/messages.properties";
     private static String INVALID_ADDING_OPTION = "invalid.adding.option";
+    private Species species;
 
     private Properties messages;
     private ConsoleReader consoleReader;
@@ -91,12 +93,12 @@ public class Story {
 
         switch (selectedPlant) {
             case 1:
-                flower = plantService.createFlower("green", 1, 1.3, "Bellflower");
+                flower = plantService.createFlower("green", 1, 1.3, Species.BELLFLOWER);
                 flower.introduce();
                 this.forest.addLifeform(flower);
                 break;
             case 2:
-                flower = plantService.createFlower("green", 1, 1.3, "Daisy");
+                flower = plantService.createFlower("green", 1, 1.3, Species.DAISY);
                 flower.introduce();
                 this.forest.addLifeform(flower);
                 break;
