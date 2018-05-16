@@ -17,4 +17,10 @@ public class Cat extends Animal {
 	public void voice () {
 		System.out.println ("Mau-mau-mau!");
 	}
+
+	@Override
+	public void introduce() {
+		String result = this.toString() + " and I'm a " + this.catBreed;
+		System.out.println(result);
+	}
 }

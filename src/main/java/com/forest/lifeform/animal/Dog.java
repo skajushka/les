@@ -17,4 +17,10 @@ public class Dog extends Animal {
 	public void voice() {
 		System.out.println("Hau-hau-hau!");
 	}
+
+	@Override
+	public void introduce() {
+		String result = this.toString() + " and I'm a " + this.dogBreed;
+		System.out.println(result);
+	}
 }

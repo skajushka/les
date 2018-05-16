@@ -106,7 +106,6 @@ abstract public class Animal extends LifeForm {
 	public String toString() {
 		String result = "";
 		result = result + "I'm " + this.name + "-The-" + this.getClass().getSimpleName() + "\n";
-		result = result + "I'm a " + this.species + "\n";
 		result = result + "My color is " + this.color + "\n";
 		result = result + "I am " + this.age + " years old" + "\n";
 		
@@ -119,7 +118,5 @@ abstract public class Animal extends LifeForm {
 		return result;
 	}
 	
-	public void introduce() {
-		System.out.println(toString());	
-	}
+	abstract public void introduce();
 }

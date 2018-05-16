@@ -81,12 +81,10 @@ public class Story {
                 Cat cat = animalService.createCat();
                 cat.introduce();
                 this.forest.addLifeform(cat);
-                System.out.println("I'm a wild wild cat!");
             } else if (selectedBreed == 2) {
                 Cat cat = animalService.createCat();
                 cat.introduce();
                 this.forest.addLifeform(cat);
-                System.out.println("I'm a pretty domestic cat!");
             } else {
                 System.out.println(messages.get(INVALID_ADDING_OPTION));
             }
@@ -97,12 +95,10 @@ public class Story {
                 Dog dog = animalService.createDog();
                 dog.introduce();
                 this.forest.addLifeform(dog);
-                System.out.println("I'm a labrador!");
             } else if (selectedBreed == 2) {
                 Dog dog = animalService.createDog();
                 dog.introduce();
                 this.forest.addLifeform(dog);
-                System.out.println("I'm a beagle!");
             } else {
                 System.out.println(messages.get(INVALID_ADDING_OPTION));
             }

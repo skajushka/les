@@ -48,6 +48,12 @@ public class Raccoon extends Animal {
         System.out.println("Raccoon says: I went to the Forest and picked " + bouquette.size() + " flowers!");
     }
 
+    @Override
+
+    public void introduce() {
+        System.out.println(this.toString());
+    }
+
     public void addFlowers(Collection<Flower> bouquette) {
         this.flowers.addAll(bouquette);
     }
