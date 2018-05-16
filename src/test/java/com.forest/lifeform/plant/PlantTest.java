@@ -1,5 +1,7 @@
+
 package com.forest.lifeform.plant;
 
+import com.forest.lifeform.Species;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
@@ -18,6 +20,7 @@ public abstract class PlantTest {
     public static String TOSTRING_SECOND_PART = "My color is ";
     public static String TOSTRING_THIRD_PART = "I am ";
     public static String TOSTRING_FORTH_PART = "My height is ";
+    public static Species species;
 
     protected Plant plant;
 
@@ -26,7 +29,7 @@ public abstract class PlantTest {
 
     @Test
     public void testCheckGrow() {
-        plant = new Flower(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT, "Daisy");
+        plant = new Flower(DEFAULT_DAISY_COLOR, DEFAULT_DAISY_AGE, DEFAULT_DAISY_HEIGHT, Species.DAISY);
         plant.grow(DEFAULT_ENERGY);
         assertEquals(HEIGHT_AFTER_GROW, plant.getHeight(), DELTA);
     }

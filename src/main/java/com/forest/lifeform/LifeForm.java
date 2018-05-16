@@ -5,7 +5,7 @@ abstract public class LifeForm {
 	
 	protected int age;
 	protected String color;
-	protected String species;
+	protected Species species;
 	
 	public void setAge(int age) {
 		this.age = age;
@@ -23,7 +23,7 @@ abstract public class LifeForm {
 		return this.color;
 	}
 
-	public String getSpecies() {
+	public Species getSpecies() {
 		return this.species;
 	}
 }

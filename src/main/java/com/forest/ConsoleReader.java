@@ -19,7 +19,11 @@ public class ConsoleReader {
     private static String COLLECT_FLOWERS = "collecting.flowers";
     private static String ENDING_STORY = "ending.story";
     private static String ADD_CAT = "adding.cat";
+    private static String ADD_WILD_CAT = "adding.wildCat";
+    private static String ADD_DOMESTIC_CAT = "adding.domesticCat";
     private static String ADD_DOG = "adding.dog";
+    private static String ADD_LABRADOR = "adding.labrador";
+    private static String ADD_BEAGLE = "adding.beagle";
     private static String ADD_BELLFLOWER = "adding.bellflower";
     private static String ADD_DAISY = "adding.daisy";
     private static String ADD_HEATHER = "adding.bush";
@@ -61,6 +65,20 @@ public class ConsoleReader {
     public int createAnimal() {
         System.out.println(messages.get(ADD_CAT));
         System.out.println(messages.get(ADD_DOG));
+
+        return readOption();
+    }
+
+    public int createCatBreed() {
+        System.out.println(messages.get(ADD_WILD_CAT));
+        System.out.println(messages.get(ADD_DOMESTIC_CAT));
+
+        return readOption();
+    }
+
+    public int createDogBreed() {
+        System.out.println(messages.get(ADD_LABRADOR));
+        System.out.println(messages.get(ADD_BEAGLE));
 
         return readOption();
     }

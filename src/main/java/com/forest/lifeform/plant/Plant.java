@@ -1,12 +1,13 @@
 package com.forest.lifeform.plant;
 
 import com.forest.lifeform.LifeForm;
+import com.forest.lifeform.Species;
 
 abstract public class Plant extends LifeForm {
 	
 	protected double height;
 	
-	public Plant(String color, int age, double height, String species) {
+	public Plant(String color, int age, double height, Species species) {
 		this.color = color;
 		this.age = age;
 		this.height = height;
