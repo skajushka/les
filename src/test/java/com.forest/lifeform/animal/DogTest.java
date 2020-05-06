@@ -11,7 +11,7 @@ public class DogTest extends AnimalTest {
     public static String DEFAULT_DOG_COLOR = "brown";
     public static int DEFAULT_DOG_AGE = 3;
     public static int DEFAULT_DOG_MAX_HUNGER = 5;
-    public static String DEFAULT_DOG_SPECIES = "Canis familiaris";
+    public static String DEFAULT_DOG_SPECIES = "DOG";
     public static String DOG_VOICE = "Hau-hau-hau!";
     public static String DOG_INTRODUCE_TEXT = "I'm Rex-The-Dog";
     public static int DOG_HUNGER_AFTER_FEED = 3;
@@ -24,7 +24,7 @@ public class DogTest extends AnimalTest {
     @Test
     public void checkDefaultConstructorValues() {
         assertEquals(DEFAULT_DOG_MAX_HUNGER, animal.getMaxHunger());
-        assertEquals(DEFAULT_DOG_SPECIES, animal.getSpecies());
+        assertEquals(DEFAULT_DOG_SPECIES, animal.getSpecies().toString());
     }
 
     @Test(expected=IllegalArgumentException.class)

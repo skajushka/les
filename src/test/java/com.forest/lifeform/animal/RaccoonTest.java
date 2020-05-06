@@ -18,7 +18,7 @@ public class RaccoonTest extends AnimalTest {
     public static Sex DEFAULT_RACCOON_SEX = Sex.MALE;
     public static int DEFAULT_RACCOON_AGE = 3;
     public static int DEFAULT_RACCOON_MAX_HUNGER = 4;
-    public static String DEFAULT_RACCOON_SPECIES = "Procyon lotor";
+    public static String DEFAULT_RACCOON_SPECIES = "RACCOON";
     public static int RACCOON_HUNGER_AFTER_FEED = 2;
     public static String RACCOON_VOICE = "Uru-ru-ru!";
     public static String RACCOON_INTRODUCE_TEXT = "I'm Jack-The-Raccoon";
@@ -37,7 +37,7 @@ public class RaccoonTest extends AnimalTest {
     @Test
     public void checkDefaultConstructorValues() {
         assertEquals(DEFAULT_RACCOON_MAX_HUNGER, animal.getMaxHunger());
-        assertEquals(DEFAULT_RACCOON_SPECIES, animal.getSpecies());
+        assertEquals(DEFAULT_RACCOON_SPECIES, animal.getSpecies().toString());
     }
 
     @Test (expected=IllegalArgumentException.class)

@@ -31,9 +31,9 @@ public class TreeTest extends PlantTest {
         assertEquals(DEFAULT_PINE_HEIGHT, plant.getHeight(), DELTA);
     }
 
-    @Test
+/*    @Test
     public void testIntroduce() {
         plant.introduce();
         assertTrue(log.getLog().contains(PINE_INTRODUCE_MESSAGE));
-    }
+    }*/
 }

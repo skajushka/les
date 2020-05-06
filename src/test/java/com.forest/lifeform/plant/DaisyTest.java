@@ -31,9 +31,9 @@ public class DaisyTest extends PlantTest {
         assertEquals(DEFAULT_DAISY_HEIGHT, plant.getHeight(), DELTA);
     }
 
-    @Test
+/*    @Test
     public void testIntroduce() {
         plant.introduce();
         assertTrue(log.getLog().contains(DAISY_INTRODUCE_MESSAGE));
-    }
+    }*/
 }

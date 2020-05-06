@@ -12,7 +12,7 @@ public class CatTest extends AnimalTest {
     public static Sex DEFAULT_CAT_SEX = Sex.MALE;
     public static int DEFAULT_CAT_AGE = 5;
     public static int DEFAULT_CAT_MAX_HUNGER = 3;
-    public static String DEFAULT_CAT_SPECIES = "Fellis catus";
+    public static String DEFAULT_CAT_SPECIES = "CAT";
     public static String CAT_VOICE = "Mau-mau-mau!";
     public static String CAT_INTRODUCE_TEXT = "I'm Blacky-The-Cat";
     public static int CAT_HUNGER_AFTER_FEED = 1;
@@ -25,7 +25,7 @@ public class CatTest extends AnimalTest {
     @Test
     public void checkDefaultConstructorValues() {
         assertEquals(DEFAULT_CAT_MAX_HUNGER, animal.getMaxHunger());
-        assertEquals(DEFAULT_CAT_SPECIES, animal.getSpecies());
+        assertEquals(DEFAULT_CAT_SPECIES, animal.getSpecies().toString());
     }
 
     @Test(expected=IllegalArgumentException.class)
